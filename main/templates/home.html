@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f6f9;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        ul {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+   <h1>{{ greeting }}, {{ name }} 👋</h1>
+
+    <p>Right now: {{ today }}</p>
+
+    <h2>Features:</h2>
+    <ul>
+        {% for item in items %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+
+    {% if items %}
+        <p>We have {{ items|length }} features loaded.</p>
+    {% else %}
+        <p>No features yet.</p>
+    {% endif %}
+</body>
+</html>
